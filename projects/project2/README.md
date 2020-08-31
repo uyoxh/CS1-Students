@@ -49,4 +49,4 @@ public class Tests {
 
 ### How to submit it:
 * Write your names on the first page under the title.
-* The leader of your group needs to submit the paper or ppt to [Projects/Project-1](Projects/Project-1)
+* The leader of your group needs to submit the paper or ppt to [projects/project2](projects/project2)

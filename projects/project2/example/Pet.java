@@ -1,5 +1,6 @@
+
 public abstract class Pet {
-    private String name;
-    
+    protected String name;
+
     public abstract void makeSound();
-  }
+}

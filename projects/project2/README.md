@@ -5,6 +5,10 @@ Design a family of classes that shows all 4 characteristics of the Object-Orient
 * Encapsulation
 * Inheritance
 * Polymorphism.
+  
+Write a test class to show - 
+* how to create instances from constructors
+* how inheritance and polymorphism works
 
 ### Examples:
 We are creating a Pet class family in this example - 
@@ -17,36 +21,45 @@ The complete code is in [Example](Example).
 
 ```
 public abstract class Pet {
-  private String name;
-  public abstract void makeSound();
+    protected String name;
+    public abstract void makeSound();
 }
 
 public class Cat extends Pet {
-  public void makeSound() {
-    System.out.println("The Cat says: wee wee");
-  }
+    public Cat(String myName) {
+        name = myName;
+    }
+    public void makeSound() {
+        System.out.println("My Cat " + name + " says: mee mee");
+    }
 }
 
 public class Dog extends Pet {
-  public void makeSound() {
-    System.out.println("The dog says: bow wow");
-  }
+    public Dog(String myName) {
+        name = myName;
+    }
+    public void makeSound() {
+        System.out.println("My Dog " + name + " says: wow wow");
+    }
 }
 
+/**
+ * Authors: Kai Zhang ...
+ */
 public class Tests {
-  public static void main(String[] args) {
-    Pet myCat = new Cat();  // Create a Cat object
-    Pet myDog = new Dog();  // Create a Dog object
-    myCat.makeSound();
-    myDog.makeSound();
-  }
+    public static void main(String[] args) {
+        Pet myCat = new Cat("Gini"); // Create a Cat object
+        Pet myDog = new Dog("Weiwei"); // Create a Dog object
+        myCat.makeSound();
+        myDog.makeSound();
+    }
 }
 ```
 
 ### How to do it:
-* Please pick a topic that your group are interested in and discuss it in your group. 
-* Collaboratively write a paper or ppt (presentation) with diagrams describing and showing how the parts in the system working together to solve the problem.
-
+* Please pick a Class family that your group are interested in and discuss it in your group. 
+* Collaboratively implement them meeting the requirements.
+  
 ### How to submit it:
-* Write your names on the first page under the title.
+* Write your names in the test class "Authors" comment, like what is shown in the given example.
 * The leader of your group needs to submit the paper or ppt to [projects/project2](projects/project2)

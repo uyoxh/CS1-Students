@@ -6,6 +6,6 @@ public class Cat extends Pet {
     }
 
     public void makeSound() {
-        System.out.println("The Cat says: wee wee");
+        System.out.println("My Cat " + name + " says: mee mee");
     }
 }

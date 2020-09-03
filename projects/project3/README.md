@@ -13,7 +13,7 @@
   * getter methods for name and age
   * toString method to return the output in this format: {name: real_name, age: real_age}
 
-* Implement the Comparable interface which compare the age. 
+* Implement the `Comparable` interface which compare the age. 
 
 ### Implement one of the sorting algorithm to sort the array of person(s)
 * Choose and implement any sorting algorithm you like to sort the array of person(s) in order.
@@ -36,6 +36,11 @@
 * All code has to be compilable and tested.
 
 ## How to submit it:
-* Write your names in the comment of the Test java program.
-* Create a folder for your group in [projects/project3](projects/project3)
-* Submit the source code to the group folder.
+* Create a `your_group_name/name.md` file for your group in [projects/project3](projects/project3). 
+  * Note: `your_group_name` is your group name which should be different from others.
+  * Write your group member's names in the `name.md` file and add any notes there if you have.
+  * Then click the `Commit new file` button at the bottom.
+  * Follow steps here https://github.com/KirstieJane/STEMMRoleModels/wiki/Creating-new-folders-in-GitHub-repository-via-the-browser
+* Upload the source code files to the `your_group_name` folder
+  * navigate to the `your_group_name` folder: click the `Add file` button -> `Upload files`
+

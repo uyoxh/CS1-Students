@@ -13,7 +13,7 @@
   * getter methods for name and age
   * toString method to return the output in this format: {name: real_name, age: real_age}
 
-* Implement the `Comparable` interface which compare the age. 
+* Implement the `Comparable` interface which compares the age. 
 
 ### Implement one of the sorting algorithm to sort the array of person(s)
 * Choose and implement any sorting algorithm you like to sort the array of person(s) in order.

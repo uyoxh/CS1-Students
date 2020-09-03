@@ -36,10 +36,11 @@
 * All code has to be compilable and tested.
 
 ## How to submit it:
-* Create a `your_group_name/name.md` file for your group in [projects/project3](.). 
+* Create a `your_group_name/README.md` file for your group in [projects/project3](.). 
   * Note: `your_group_name` is your group name which should be different from others.
-  * Write your group member's names in the `name.md` file and add any notes there if you have.
+  * Write your group member's names and contributions in the `README.md` file and add any notes there if you have.
   * Then click the `Commit new file` button at the bottom.
+  * Example: https://github.com/mkz100/CS1-Students/blob/master/projects/project2/my_group_name_sample/README.md
   * Follow steps here https://github.com/KirstieJane/STEMMRoleModels/wiki/Creating-new-folders-in-GitHub-repository-via-the-browser
 * Upload the source code files to the `your_group_name` folder
   * navigate to the `your_group_name` folder: click the `Add file` button -> `Upload files`

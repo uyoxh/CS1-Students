@@ -19,7 +19,8 @@ We are creating a Pet class family in this example -
 
 The complete code is in [Example](Example). 
 
-```
+```java
+
 public abstract class Pet {
     protected String name;
     public abstract void makeSound();
@@ -57,6 +58,8 @@ public class Tests {
 ```
 
 ### How to do it:
+* This is a group project.
+* Please form or join a group of 3-4 members.
 * Please pick a Class family that your group are interested in and discuss it in your group. 
 * Collaboratively implement them meeting the requirements.
   

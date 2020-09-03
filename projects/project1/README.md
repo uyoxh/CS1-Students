@@ -7,9 +7,10 @@ Describe a system of computer hardware, software and network working together to
 * How does smart home works?
 
 ### How to do it:
-* Please pick a topic that your group are interested in and discuss it in your group. 
-* Collaboratively write a paper or ppt (presentation) with diagrams describing and showing how the parts in the system working together to solve the problem.
+* This project is expected to be done by each of you individually.
+* Please pick a topic that you are interested in. 
+* Write a paper or ppt (presentation) with diagrams describing and showing how the parts in the system working together to solve the problem.
 
 ### How to submit it:
-* Write your names on the first page under the title.
-* The leader of your group needs to submit the paper or ppt to [projects/project1](projects/project1)
+* Write your name on the first page under the title.
+* Submit the paper or ppt to [projects/project1](projects/project1)

@@ -12,4 +12,4 @@ Describe a system of computer hardware, software and network working together to
 
 ### How to submit it:
 * Write your names on the first page under the title.
-* The leader of your group needs to submit the paper or ppt to [projects/termpaper](projects/termpaper)
+* Submit the paper or ppt to [projects/termpaper](projects/termpaper)

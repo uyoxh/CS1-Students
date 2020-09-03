@@ -13,4 +13,5 @@ Describe a system of computer hardware, software and network working together to
 
 ### How to submit it:
 * Write your name on the first page under the title.
-* Submit the paper or ppt to [projects/project1](projects/project1)
+* Submit the paper or ppt to [projects/project1](.)
+  * Inside the project folder: click the `Add file` button -> `Upload files`

@@ -65,7 +65,7 @@ public class Tests {
 * All code has to be compilable and tested.
   
 ### How to submit it:
-* Create a `your_group_name/name.md` file for your group in [projects/project2](projects/project2). 
+* Create a `your_group_name/name.md` file for your group in [projects/project2](.). 
   * Note: `your_group_name` is your group name which should be different from others.
   * Write your group member's names in the `name.md` file and add any notes there if you have.
   * Then click the `Commit new file` button at the bottom.

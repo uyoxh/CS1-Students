@@ -62,7 +62,9 @@ public class Tests {
 * Please form or join a group of 3-4 members.
 * Please pick a Class family that your group are interested in and discuss it in your group. 
 * Collaboratively implement them meeting the requirements.
+* All code has to be compilable and tested.
   
 ### How to submit it:
 * Write your names in the test class "Authors" comment, like what is shown in the given example.
-* The leader of your group needs to submit the paper or ppt to [projects/project2](projects/project2)
+* Create a folder for your group in [projects/project2](projects/project2)
+* Submit the source code to the group folder.

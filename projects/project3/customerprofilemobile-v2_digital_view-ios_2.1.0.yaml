@@ -1,0 +1,1059 @@
+---
+swagger: "2.0"
+info:
+  title: "CustomerProfileMobile-V2_Digital_View-IOS"
+  description: "Version 2.0.0 -MicroApp for Customer Phone information for Credit\
+    \ Card customer. PCF Deployment Reference name -->DGL-PP-V-CustomerProfileMobile-V2\
+    \ <br> Version 2.1.0 - New endpoints has been added for Citi MRC customers"
+  x-ibm-name: "customerprofilemobile-v2_digital_view-ios"
+  version: "2.1.0"
+host: "sandbox.api.citi.com"
+schemes:
+- "https"
+basePath: "/ios/public/v1"
+produces:
+- "application/json"
+paths:
+  /citiMobile/profiles/users/email:
+    get:
+      summary: "API to get user's email with ccsid as input"
+      description: "API to get user's email with cssid as input"
+      tags:
+      - "Get Email"
+      operationId: "retrieveLumiUserEmail"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "channelId"
+        in: "header"
+        description: "Channel Id of the incoming request"
+        required: true
+        type: "string"
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "businessCode"
+        in: "header"
+        description: "3  character business code"
+        required: false
+        type: "string"
+      - name: "countryCode"
+        in: "header"
+        description: "2 character ISO format country code"
+        required: false
+        type: "string"
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/GetUserEmailResponse"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /citiMobile/profiles/users/phone:
+    get:
+      summary: "API to get user's phone with ccsid as input"
+      description: "API to get user's phone with cssid as input"
+      tags:
+      - "Get Phone"
+      operationId: "retrieveLumiUserPhone"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "channelId"
+        in: "header"
+        description: "Channel Id of the incoming request"
+        required: true
+        type: "string"
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "businessCode"
+        in: "header"
+        description: "3  character business code"
+        required: false
+        type: "string"
+      - name: "countryCode"
+        in: "header"
+        description: "2 character ISO format country code"
+        required: false
+        type: "string"
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/GetUserPhoneResponse"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /citiMobile/profiles/users/contact:
+    put:
+      summary: "API to update email(and login id) or phone number with cssid as input"
+      description: "API to update email(and login id) or phone number with cssid as\
+        \ input"
+      tags:
+      - "Update"
+      operationId: "updateLumiUserContact"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "channelId"
+        in: "header"
+        description: "Channel Id of the incoming request"
+        required: true
+        type: "string"
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "businessCode"
+        in: "header"
+        description: "3  character business code"
+        required: false
+        type: "string"
+      - name: "countryCode"
+        in: "header"
+        description: "2 character ISO format country code"
+        required: false
+        type: "string"
+      - name: "Content-Type"
+        in: "header"
+        description: "Content types that are acceptable for the request. Currently\
+          \ we support application/json. This is present only for PUT/POST Methods"
+        required: true
+        type: "string"
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      - in: "body"
+        name: "updateUserProfileRequest"
+        description: "update user's Citi Profile"
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateUserProfileRequest"
+      responses:
+        200:
+          description: "Successful operation."
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /v1/citiMobile/profiles/customers/phoneInfo:
+    get:
+      summary: "API to get Customer Phone"
+      description: "API to get customer Profile of Customer(Creditcard)"
+      tags:
+      - "GetCustomerPhone"
+      operationId: "retrieveCustomerPhoneInfo"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      - name: "channelId"
+        in: "query"
+        type: "string"
+        description: "Channel Id of the incoming request"
+        required: true
+      - name: "countryCode"
+        in: "query"
+        type: "string"
+        description: "2 character ISO format country code"
+        required: false
+      - name: "businessCode"
+        in: "query"
+        type: "string"
+        description: "3  character business code"
+        required: false
+      responses:
+        200:
+          description: "The Request has succeeded"
+          schema:
+            $ref: "#/definitions/CustomerGetPhoneInfoResponse"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    put:
+      summary: "API to Update Customer Phone information"
+      description: "API to Update Customer Phone information"
+      tags:
+      - "UpdateCustomerPhone"
+      operationId: "updateCustomerPhoneInfo"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "Content-Type"
+        in: "header"
+        description: "Content types that are acceptable for the request. Currently\
+          \ we support application/json. This is present only for PUT/POST Methods"
+        required: true
+        type: "string"
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      - name: "updatePhoneInfoRequest"
+        required: true
+        in: "body"
+        description: "Update Phone Request"
+        schema:
+          $ref: "#/definitions/UpdatePhoneInfoRequest"
+      - name: "channelId"
+        in: "query"
+        type: "string"
+        description: "Channel Id of the incoming request"
+        required: true
+      - name: "countryCode"
+        in: "query"
+        type: "string"
+        description: "2 character ISO format country code"
+        required: false
+      - name: "businessCode"
+        in: "query"
+        type: "string"
+        description: "3  character business code"
+        required: false
+      responses:
+        200:
+          description: "The Request has succeeded"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        409:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>partialUpdate</td><td>The\
+            \ request could not be completed due to partial Phone update</td></tr></table>"
+          schema:
+            $ref: "#/definitions/PartialPhoneUpdateResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /v1/citiMobile/profiles/customers/emailInfo:
+    get:
+      summary: "API to get Customer Email"
+      description: "API to get customer Profile of Customer(Creditcard)"
+      tags:
+      - "GetCustomerEmail"
+      operationId: "retrieveCustomerEmailInfo"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      - name: "channelId"
+        in: "query"
+        type: "string"
+        description: "Channel Id of the incoming request"
+        required: true
+      - name: "countryCode"
+        in: "query"
+        type: "string"
+        description: "2 character ISO format country code"
+        required: false
+      - name: "businessCode"
+        in: "query"
+        type: "string"
+        description: "3  character business code"
+        required: false
+      responses:
+        200:
+          description: "The Request has succeeded"
+          schema:
+            $ref: "#/definitions/CustomerGetEmailInfoResponse"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    put:
+      summary: "API to Update Customer Email information"
+      description: "API to Update Customer Email information"
+      tags:
+      - "UpdateCustomerEmail"
+      operationId: "updateCustomerEmailInfo"
+      parameters:
+      - name: "Authorization"
+        in: "header"
+        description: "The Authorization Token received in earlier API call. This will\
+          \ contain the Access Token"
+        type: "string"
+        required: true
+      - name: "client_id"
+        in: "header"
+        description: "The client ID received during application registration in the\
+          \ developer portal"
+        type: "string"
+        required: true
+      - name: "uuid"
+        in: "header"
+        description: "A 128 bit universally unique identifier (UUID) that you generate\
+          \ for every request and is used for tracking. It is recommended to use the\
+          \ output from Java UUID class or an equivalent"
+        type: "string"
+        required: true
+      - name: "bizToken"
+        in: "header"
+        description: "Session token generated during client authentication (with sid\
+          \ and scope)"
+        type: "string"
+        required: true
+      - name: "Content-Type"
+        in: "header"
+        description: "Content types that are acceptable for the request. Currently\
+          \ we support application/json. This is present only for PUT/POST Methods"
+        required: true
+        type: "string"
+      - name: "Accept"
+        in: "header"
+        description: "Content types that are acceptable for the response. Currently\
+          \ we support application/json"
+        type: "string"
+        required: true
+      - name: "updateEmailInfoRequest"
+        required: true
+        in: "body"
+        description: "Update Email Request"
+        schema:
+          $ref: "#/definitions/UpdateEmailInfoRequest"
+      - name: "channelId"
+        in: "query"
+        type: "string"
+        description: "Channel Id of the incoming request"
+        required: true
+      - name: "countryCode"
+        in: "query"
+        type: "string"
+        description: "2 character ISO format country code"
+        required: false
+      - name: "businessCode"
+        in: "query"
+        type: "string"
+        description: "3  character business code"
+        required: false
+      responses:
+        200:
+          description: "The Request has succeeded"
+        400:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing\
+            \ or invalid Parameters</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        401:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization\
+            \ credentials are missing or invalid</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        403:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td><td>More\
+            \ Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The\
+            \ request operation is not configured to access this resource</td><td>Channel/Country/Business\
+            \ provided in the request is not supported currently</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        404:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The\
+            \ requested resource was not found</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        409:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>partialUpdate</td><td>The\
+            \ request could not be completed due to partial Email update</td></tr></table>"
+          schema:
+            $ref: "#/definitions/PartialEmailUpdateResponse"
+        500:
+          description: "<table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The\
+            \ request failed due to an internal error/server unavailability</td></tr></table>"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+definitions:
+  GetUserEmailResponse:
+    properties:
+      email:
+        description: "User's Email"
+        type: "string"
+        example: "SRIJU@CITI.COM"
+  GetUserPhoneResponse:
+    properties:
+      phone:
+        description: "User's Phone"
+        type: "string"
+        example: "2698737208"
+  UpdateUserProfileRequest:
+    type: "object"
+    properties:
+      contactType:
+        type: "string"
+        description: "email or phone"
+      email:
+        type: "string"
+        description: "New email address/user ID"
+      phoneNumber:
+        type: "string"
+        description: "New Phone number"
+  ErrorResponse:
+    properties:
+      type:
+        description: "Invalid - Request did not confirm to the specification and was\
+          \ unprocessed and rejected. Please fix the value and try again "
+        enum:
+        - "error"
+        - "warn"
+        - "invalid"
+        - "fatal"
+      code:
+        description: "Error code which qualifies the error"
+        type: "string"
+      details:
+        description: "Human readable explanation specific to the occurrence of the\
+          \ problem"
+        type: "string"
+      location:
+        description: "The name of the field that resulted in the error"
+        type: "string"
+      moreInfo:
+        description: "URI to human readable documentation of the error"
+        type: "string"
+    required:
+    - "code"
+    - "details"
+  CustomerGetEmailInfoResponse:
+    properties:
+      customerEmailDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/GetCustomerEmailInfo"
+  UpdateEmailInfoRequest:
+    properties:
+      updatedEmail:
+        type: "array"
+        items:
+          $ref: "#/definitions/UpdateEmailRequest"
+      contactType:
+        description: "contactType"
+        type: "string"
+        example: "EMAIL"
+  GetCustomerEmailInfo:
+    properties:
+      displayAccountNumber:
+        description: "A masked account number/last four(4) digits of account number\
+          \ that can be displayed to the customer."
+        type: "string"
+        example: ""
+      nraAccountInd:
+        description: "nraAccountInd for customer."
+        type: "string"
+        example: "Y/N"
+      emailEditableInd:
+        description: "emailEditableInd for customer."
+        type: "string"
+        example: "Y/N"
+      productDescription:
+        description: "Display Account Description."
+        type: "string"
+        example: ""
+      accountType:
+        type: "string"
+        description: "Account type"
+        enum:
+        - "BANK"
+        - "RETIREMENT"
+        - "INVESTMENT"
+        - "LOAN"
+        - "LINE_OF_CREDIT"
+        - "CREDIT_CARD"
+        - "INSURANCE"
+        example: "INVESTMENT"
+      productCode:
+        description: "Product Code"
+        type: "string"
+        example: ""
+      productId:
+        description: "Credit card customer personal identification id"
+        type: "string"
+        example: ""
+      accountId:
+        description: "Unique Id for each Account."
+        type: "string"
+        example: ""
+      customerEmailData:
+        type: "array"
+        items:
+          $ref: "#/definitions/CustomerEmailInfo"
+  CustomerEmailInfo:
+    properties:
+      emailId:
+        description: "Unique Email Id for each Email."
+        type: "string"
+        example: ""
+      emailAddress:
+        description: "Customer Email address"
+        type: "string"
+        example: ""
+      oldEmailId:
+        description: "Customer old Email "
+        type: "string"
+        example: ""
+      invalidEmailInd:
+        description: "Custom invalidEmailFlag"
+        type: "string"
+        example: "Y/N"
+      emailConsentIndicator:
+        description: "Customer Mailing Email emailConsentIndicator."
+        type: "string"
+        example: "Y/N"
+      emailRefusalInd:
+        description: "Customer emailRefusalFlag."
+        type: "string"
+        example: ""
+      emailType:
+        description: "Customer emailType"
+        type: "string"
+        example: "PRIMARY/SECONDARY"
+      emailLastUpdatedDt:
+        description: "Customer emailLastUpdatedDate"
+        type: "string"
+        example: "07/07/2018"
+      emailAlertsFlag:
+        description: "emailAlertsFlag"
+        type: "string"
+        example: ""
+      emailBillPresentmentFlag:
+        description: "emailBillPresentmentFlag"
+        type: "boolean"
+        example: "true/false"
+      emailMarketPreferenceFlag:
+        description: "Customer emailMarketPreferenceFlag"
+        type: "boolean"
+        example: "true/false"
+      paperlessEnrollmentFlag:
+        description: "Customer paperlessEnrollmentFlag"
+        type: "boolean"
+        example: "true/false"
+      emailRewardsInDbFlag:
+        description: "Customer emailRewardsInDbFlag"
+        type: "boolean"
+        example: "true/false"
+  UpdateEmailRequest:
+    properties:
+      nraAccountInd:
+        description: "Customer Email nraAccountFlag"
+        type: "string"
+        example: "Y/N"
+      accountType:
+        type: "string"
+        description: "Account type"
+        enum:
+        - "BANK"
+        - "RETIREMENT"
+        - "INVESTMENT"
+        - "LOAN"
+        - "LINE_OF_CREDIT"
+        - "CREDIT_CARD"
+        - "INSURANCE"
+        example: "INVESTMENT"
+      accountId:
+        description: "Unique card Account Id for each Email."
+        type: "string"
+        example: "123"
+      emailDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/CustomerEmailInfo"
+  PartialEmailUpdateResponse:
+    properties:
+      partialUpdateEmail:
+        type: "array"
+        items:
+          $ref: "#/definitions/PartialEmailUpdate"
+  PartialEmailUpdate:
+    properties:
+      accountId:
+        description: "Unique card Account Id for each Email."
+        type: "string"
+        example: ""
+      partialUpdateFlag:
+        description: "Unique Flag  that indicates account update is success or failure."
+        type: "boolean"
+        example: "true/false"
+  CustomerGetPhoneInfoResponse:
+    properties:
+      customerPhoneDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/GetCustomerPhoneInfo"
+  UpdatePhoneInfoRequest:
+    properties:
+      updatedPhone:
+        type: "array"
+        items:
+          $ref: "#/definitions/UpdatePhoneRequest"
+      contactType:
+        description: "contactType"
+        type: "string"
+        example: "PHONE"
+  GetCustomerPhoneInfo:
+    properties:
+      displayAccountNumber:
+        description: "A masked account number/last four(4) digits of account number\
+          \ that can be displayed to the customer."
+        type: "string"
+        example: ""
+      nraAccountInd:
+        description: "nraAccountFlag for customer."
+        type: "string"
+        example: "N"
+      phoneEditableInd:
+        description: "phoneEditableFlag for customer."
+        type: "string"
+        example: "N"
+      productDescription:
+        description: "Display Account Description."
+        type: "string"
+        example: ""
+      accountType:
+        type: "string"
+        description: "Account type"
+        enum:
+        - "BANK"
+        - "RETIREMENT"
+        - "INVESTMENT"
+        - "LOAN"
+        - "LINE_OF_CREDIT"
+        - "CREDIT_CARD"
+        - "INSURANCE"
+        example: "INVESTMENT"
+      productCode:
+        description: "Product Code"
+        type: "string"
+        example: ""
+      productId:
+        description: "Credit card customer personal identification id"
+        type: "string"
+        example: ""
+      accountId:
+        description: "Unique Id for each Account."
+        type: "string"
+        example: ""
+      phoneDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/CustomerPhoneInfo"
+  CustomerPhoneInfo:
+    properties:
+      phoneId:
+        description: "Unique Phone Id for each Phone."
+        type: "string"
+        example: ""
+      phoneNumber:
+        description: "Customer Phone address"
+        type: "string"
+        example: ""
+      oldPhoneNumber:
+        description: "Customer old oldPhoneNumber "
+        type: "string"
+        example: ""
+      callConsentInd:
+        description: "Customer Mailing Phone PhoneConsentIndicator."
+        type: "string"
+        example: "Y/N"
+      smsConsentInd:
+        description: "Customer PhoneRefusalFlag."
+        type: "string"
+        example: "N/Y"
+      phoneCategoryType:
+        description: "Custom Phone type."
+        type: "string"
+        enum:
+        - "MOBILE"
+        - "BUSINESS"
+        - "HOME"
+        - "PREFERRED"
+        example: "MOBILE"
+      phoneLastUpdatedDt:
+        description: "Customer PhoneLastUpdatedDate"
+        type: "string"
+        example: "07/07/2018"
+      preferenceType:
+        description: "preferenceType"
+        type: "string"
+        example: "PRIMARY/SECONDARY"
+      activationStatus:
+        description: "activationStatus"
+        type: "string"
+        example: "Y/N"
+  UpdatePhoneRequest:
+    properties:
+      nraAccountInd:
+        description: "Customer Phone nraAccountFlag"
+        type: "string"
+        example: "N/Y"
+      accountType:
+        type: "string"
+        description: "Account type"
+        enum:
+        - "BANK"
+        - "RETIREMENT"
+        - "INVESTMENT"
+        - "LOAN"
+        - "LINE_OF_CREDIT"
+        - "CREDIT_CARD"
+        - "INSURANCE"
+        example: "INVESTMENT"
+      accountId:
+        description: "Unique card Account Id for each Phone."
+        type: "string"
+        example: "123"
+      phoneDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/CustomerPhoneInfo"
+  PartialPhoneUpdateResponse:
+    properties:
+      partialUpdatePhone:
+        type: "array"
+        items:
+          $ref: "#/definitions/PartialPhoneUpdate"
+  PartialPhoneUpdate:
+    properties:
+      accountId:
+        description: "Unique card Account Id for each Phone."
+        type: "string"
+        example: ""
+      phoneCategoryType:
+        description: "Custom Phone type."
+        type: "string"
+        enum:
+        - "MOBILE"
+        - "BUSINESS"
+        - "HOME"
+        - "PREFERRED"
+        example: "MOBILE"
+      partialUpdateFlag:
+        description: "Unique Flag  that indicates account update is success or failure."
+        type: "boolean"
+        example: "true/false"
+securityDefinitions:
+  client_id:
+    type: "apiKey"
+    description: ""
+    in: "header"
+    name: "X-IBM-Client-Id"
+security:
+- client_id: []
+x-ibm-configuration:
+  properties:
+    hostName:
+      value: "https://xlg-fdn-p-psg-gt1perf.cfapps-gt1-perf.nam.nsroot.net"
+      description: ""
+      encoded: false
+  catalogs: {}
+  assembly:
+    execute:
+    - proxy:
+        title: "proxy"
+        verb: "keep"
+        cache-response: "protocol"
+        cache-ttl: 900
+        version: "1.0.0"
+        target-url: "$(hostName)$(api.operation.path)"
+    - activity-log:
+        title: "activity-log"
+        content: "header"
+        error-content: "header"
+        version: "1.0.0"
+    catch: []
+  enforced: true
+  testable: true
+  phase: "realized"
+  cors:
+    enabled: true

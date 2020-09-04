@@ -1,4 +1,4 @@
-# Project 3 - Data Structure and Algorithms (1)
+# Project 4 - Data Structure and Algorithms (2)
 
 ## Requirements
 * Create 8 instances using the `Person` constructor by giving the names and ages of your choice

@@ -20,7 +20,7 @@
 * Print the person instances in the sorted order. (toString method should be used to format the output)
 
 ### Create a Test program 
-* Instantiate / create 5 instances using the Person constructor by giving the names and ages of your choice
+* Create 5 instances using the Person constructor by giving the names and ages of your choice
 * Put them in an array
 * Use your sort algorithm to sort the array
 * Print the array in sorted order

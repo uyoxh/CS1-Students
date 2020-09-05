@@ -1,4 +1,4 @@
-## Project 2
+## Project 2 Java and Object-Oriented Programming
 
 Design a family of classes that shows all 4 characteristics of the Object-Oriented Programming, i.e. 
 * Abstraction

@@ -1,5 +1,6 @@
-## Project 1
-Describe a system of computer hardware, software and network working together to solve a problem in our everyday life? 
+## Project 1. You and Computer Science
+* Introduce yourself
+* Describe a system of computer hardware, software and network working together to solve a problem in our everyday life? 
 
 ### Examples:
 * How does your cell phone help you do a certain task for you? e.g. Pay your bills, buy something from Taobao ... (Remember smart cell phones are computers.)
@@ -8,6 +9,7 @@ Describe a system of computer hardware, software and network working together to
 
 ### How to do it:
 * This project is expected to be done by each of you individually.
+* Write an brief introduction about yourself, who you are and why you study information management.
 * Please pick a topic that you are interested in. 
 * Write a paper or ppt (presentation) with diagrams describing and showing how the parts in the system working together to solve the problem.
 

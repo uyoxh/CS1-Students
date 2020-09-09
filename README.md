@@ -5,8 +5,8 @@
 ## Projects
 | Projects | Due | Comments |
 | --- | --- | --- |
-| [Project 1](projects/project1/README.md) | in a week |  |
-| [Project 2](projects/project2/README.md) | in a week |  |
-| [Project 3](projects/project3/README.md) | in a week |  |
-| [Project 4](projects/project4/README.md) | in a week |  |
-| [Term Paper](projects/termpaper/README.md) | | |
+| [Project 1](projects/project1/README.md) | 2 days after video 4-2 |  |
+| [Project 2](projects/project2/README.md) | 2 days after video 6  |  |
+| [Mid-Term Project 3](projects/project3/README.md) | 2 days after video 8-9 |  |
+| [Project 4](projects/project4/README.md) | 2 days after video 8-15 |  |
+| [Final-Term Paper](projects/termpaper/README.md) | 2 days after video 10 | |

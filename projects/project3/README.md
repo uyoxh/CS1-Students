@@ -31,9 +31,10 @@
 
 ## How to do it:
 * This is a group project.
-* Please form or join a group of 3-4 members.
+* Please form or join a group of <5 members.
 * Please work together as a group but each member has to contribute.
 * All code has to be compilable and tested.
+* Write your names on the test program and turn in your code with test data and output data.
 
 ## How to submit it:
 * Create a `your_group_name/README.md` file for your group in [projects/project3](.). 

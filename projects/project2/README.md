@@ -17,7 +17,7 @@ We are creating a Pet class family in this example -
   1. `Cat` [ Child Class / SubClass ]
   2. `Dog` [ Child Class / SubClass ]
 
-The complete code is in [Example](Example). 
+The complete code is in [Example](example). 
 
 ```java
 
